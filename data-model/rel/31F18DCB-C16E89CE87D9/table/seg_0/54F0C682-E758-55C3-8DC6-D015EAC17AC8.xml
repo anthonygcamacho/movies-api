@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="54F0C682-E758-55C3-8DC6-D015EAC17AC8" name="directors">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>D3317DB5-AF1B-AC69-5675-40E1F6E0439B</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="director_id" id="EE16649B-EFAB-2B00-AEE5-FD020DA65ABF">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>A33B1595-94C5-AD91-F6F5-20FE2F2CA5F8</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="first_name" id="0E0E338B-BA21-91CB-0050-01E02EE5F1AB">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>1FD91A5B-0FD7-5ED2-9D87-92667EEE412F</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="last_name" id="AB0E6DD4-BC21-704F-5C5A-43163FC77B39">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>CC7ACDBD-56C7-2022-F68E-31FCA7D97EFE</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date_of_birth" id="AC59F2D6-756F-840F-BA2E-08B08211881C">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>912D5D15-D8AD-8A59-5FD8-F791B87DD2D7</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nationality" id="DE074DEE-FCB7-5CCF-638E-5E2E213FEDB4">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>7483D9DF-2467-6C47-0E25-11636A23B428</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EDC45E01-DA1E-B661-F542-077F8A38CA8A" name="directors_PK">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>E5ECE2F5-F72C-A611-B00D-23B2BC28A97A</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE16649B-EFAB-2B00-AEE5-FD020DA65ABF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

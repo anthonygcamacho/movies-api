@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BF87FCCB-A8DC-A512-19B8-428370A80C78" name="movies_actors">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>2553DC2A-1422-5CA4-014E-2AB8CDEAE0E3</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="movies_actors_ID" id="7E6D4798-81AB-6710-346C-CE8C309BBDB9">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-07 00:19:20 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="movie_id" id="BA5BD711-E52C-71B5-D176-416585EFEC6C">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>4984B2FF-AEBF-601A-1AF5-49B7B64B0C8A</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="actor_id" id="B5D78F8F-D527-E91D-DB68-6B91082780B1">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>9A1F7592-0D66-654D-5352-1D6EB28C6591</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="movies_movie_id" id="9C36220B-552E-E157-AEA0-137B33276DEE">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-07 00:19:20 UTC</createdTime>
+<generatorID>DCA9200F-8CB5-6CF8-7FB5-34851F50DC34</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="43784831-4100-5638-7B34-C7DEC6C6FE1E" referredColumn="CF608A10-3EA6-DB0E-CAE5-58F135377887"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7150B75C-F5C0-10F3-DCDA-0A8ED47F13A6" name="movies_actors_PKv1">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-07 00:19:20 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="7E6D4798-81AB-6710-346C-CE8C309BBDB9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="588C6C46-E112-A200-FDD7-25C6447AFD79" name="movies_actors_movies_FK">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-07 00:19:20 UTC</createdTime>
+<generatorID>FE73C34F-B2CA-38C0-6898-E657460C9CA5</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C36220B-552E-E157-AEA0-137B33276DEE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

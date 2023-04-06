@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EDBCD8DF-320B-A4B8-A0AA-EB42355C9F06" name="actors">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 22:47:52 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="actor_id" id="BAACD736-FA68-6D3D-E3F9-96C6A6A261D4">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 22:52:21 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="first_name" id="5C3BE2DC-D511-F77F-0B13-0FB7A21C7F4F">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 22:52:21 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="last_name" id="1217BFEB-DEB2-A9C0-D515-6468B956436D">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 22:52:21 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gender" id="D8D5318E-C4B9-170F-5594-57B31B8B366B">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 22:53:38 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date_of_birth" id="55060089-598F-7474-D71A-FD350C2A91B4">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 22:53:53 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3B16373D-193D-FFD6-4E9B-F520B8E2C02E" name="actors_PK">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 22:52:21 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BAACD736-FA68-6D3D-E3F9-96C6A6A261D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

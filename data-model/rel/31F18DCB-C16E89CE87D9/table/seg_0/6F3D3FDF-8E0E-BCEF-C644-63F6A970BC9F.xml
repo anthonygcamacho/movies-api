@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6F3D3FDF-8E0E-BCEF-C644-63F6A970BC9F" name="actorsv2">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>E5C60EC9-4084-FE23-4179-90730A0B0AC9</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="actor_id" id="E1B2890F-B1C5-A62F-6C8C-763DF362FB35">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>B2F7072B-1E03-4E9F-2F36-46AEE52AED2E</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="first_name" id="5AA6730E-106D-3EF4-A9E0-9D0589C14608">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>D6FE49F4-1598-B2A1-3830-5F3789DCEDF6</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="last_name" id="7CD0F5DE-D373-DA9E-2237-F2E7209F4114">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>5D86CE1E-4670-09A1-4342-B260FBA926FD</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gender" id="59E469A9-59A8-6E57-73A7-69B34EE6ED90">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>3C439D28-6BC5-C5D4-45C0-86734E1E22A6</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date_of_birth" id="D40120CB-ED03-E59D-43B6-5EE072989638">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>823FAA1B-B1BD-ED1F-B4C7-0E0DB09C4C66</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="movies_actors_movies_actors_ID" id="8D165D82-4A09-9240-021A-4E7D804D0452">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-07 00:19:20 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FB041D68-9E85-90C2-D00A-7539E93A8D6D" referredColumn="7E6D4798-81AB-6710-346C-CE8C309BBDB9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="770F4F9B-C7FF-12F4-AEE2-BBB98E1B1BE5" name="actorsv1_PK">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>B1166382-6CF5-9B73-0969-AC71B15E5C47</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1B2890F-B1C5-A62F-6C8C-763DF362FB35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="599262D6-655F-8AB8-7C9C-16AF871A3C84" name="actorsv2__IDX">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-07 00:19:20 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>7DC51A30-EC03-48D5-4938-6621114D0F31</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="8D165D82-4A09-9240-021A-4E7D804D0452"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DF5FE7E1-EA31-FEFE-3578-4D0D6B2C79BC" name="actorsv2_movies_actors_FK">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-07 00:19:20 UTC</createdTime>
+<generatorID>7DC51A30-EC03-48D5-4938-6621114D0F31</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D165D82-4A09-9240-021A-4E7D804D0452"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

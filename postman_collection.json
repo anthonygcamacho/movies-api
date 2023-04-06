@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "3b9cecb6-278b-4f18-a6f8-c83312e4e2a5",
+		"name": "movie-rest-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "526189"
+	},
+	"item": [
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/healthcheck",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/actors",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"actors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actor by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlApi}}/actors/:actorId",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"actors",
+						":actorId"
+					],
+					"variable": [
+						{
+							"key": "actorId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actors by movie Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlApi}}/movies/:movieId/actors",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"movies",
+						":movieId",
+						"actors"
+					],
+					"variable": [
+						{
+							"key": "movieId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "directors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/directors",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"directors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "director by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/directors/:directorId",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"directors",
+						":directorId"
+					],
+					"variable": [
+						{
+							"key": "directorId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/movies",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movie by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/movies/:movieId",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"movies",
+						":movieId"
+					],
+					"variable": [
+						{
+							"key": "movieId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies by actor Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlApi}}/actors/:actorId/movies",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"actors",
+						":actorId",
+						"movies"
+					],
+					"variable": [
+						{
+							"key": "actorId",
+							"value": "89"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies by director Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlApi}}/directors/:directorId/movies",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"directors",
+						":directorId",
+						"movies"
+					],
+					"variable": [
+						{
+							"key": "directorId",
+							"value": "26"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "revenue by movie Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/movies/:movieId/revenue",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"movies",
+						":movieId",
+						"revenue"
+					],
+					"variable": [
+						{
+							"key": "movieId",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "baseUrlApi",
+			"value": "http://localhost:3000/api/v1"
+		}
+	]
+}

@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2553DC2A-1422-5CA4-014E-2AB8CDEAE0E3" name="movies_actors">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:24:59 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<engineerTo>
+<item key="31F18DCB-D476-F253-308C-C16E89CE87D9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="movie_id" id="4984B2FF-AEBF-601A-1AF5-49B7B64B0C8A">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:25:21 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<engineerTo>
+<item key="31F18DCB-D476-F253-308C-C16E89CE87D9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="actor_id" id="9A1F7592-0D66-654D-5352-1D6EB28C6591">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:25:22 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<engineerTo>
+<item key="31F18DCB-D476-F253-308C-C16E89CE87D9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="movie_id1" id="DCA9200F-8CB5-6CF8-7FB5-34851F50DC34">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-07 00:19:10 UTC</createdTime>
+<generatorID>FE73C34F-B2CA-38C0-6898-E657460C9CA5</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<engineerTo>
+<item key="31F18DCB-D476-F253-308C-C16E89CE87D9" value="true"/>
+</engineerTo>
+<referedAttribute>C181A263-0BBB-59D3-7D80-320F2B0F977E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="actor_id1" id="FF5C66E0-F761-F950-1FA9-81E4A09B6AA3">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-08 20:02:01 UTC</createdTime>
+<generatorID>42889D30-AAA1-382C-3561-93F56E4B9E78</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<engineerTo>
+<item key="31F18DCB-D476-F253-308C-C16E89CE87D9" value="true"/>
+</engineerTo>
+<referedAttribute>B2F7072B-1E03-4E9F-2F36-46AEE52AED2E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="28F69B9E-25BF-C208-12AB-590512D06165" name="movies_actors PK">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-07 00:25:46 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<engineerTo>
+<item key="31F18DCB-D476-F253-308C-C16E89CE87D9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4984B2FF-AEBF-601A-1AF5-49B7B64B0C8A</attributeRef>
+<attributeRef>9A1F7592-0D66-654D-5352-1D6EB28C6591</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

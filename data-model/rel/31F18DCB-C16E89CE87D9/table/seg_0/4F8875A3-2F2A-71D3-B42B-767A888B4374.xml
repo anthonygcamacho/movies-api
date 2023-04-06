@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4F8875A3-2F2A-71D3-B42B-767A888B4374" name="movie_revenues">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>89859275-524A-3B8E-1EFB-95D878A1774C</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="revenue_id" id="86C22785-0F82-E230-B1C2-C9642042BC8C">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>604C938E-C3ED-7139-A5E3-57B336D990ED</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="movie_id" id="9B0A36F3-0056-D962-8C76-CB89D26EF95F">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>EB371094-285C-1E37-466B-41D940D99E80</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="domestic_takings" id="293FA202-FC66-7994-01FB-118077D98CE5">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>AB2642AD-7EF9-EE9D-6F4F-7AA0E4034AB9</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="international_takings" id="35EFA01F-0ECA-BED3-2C92-4B6A511BDF02">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>8FA8DE84-16FE-BE29-4488-E64B83CE6509</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="movies_movie_id" id="5F8AFAEC-8C7E-3027-3DB2-818DF82C2C8E">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>D92013D7-D7EE-5993-411D-80E1C4C4C92A</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8AC61A87-0F8D-6DA2-C906-E15103327748" referredColumn="CF608A10-3EA6-DB0E-CAE5-58F135377887"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="97AEBC9F-3A79-EC09-DF59-80AE6055B2D9" name="movie_revenues_PK">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>79D52E23-CC39-268A-1113-5E222D22A8F3</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86C22785-0F82-E230-B1C2-C9642042BC8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4473B3BE-7AC6-17BE-E0FD-6BF88C214424" name="movie_revenues__IDX">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>581A0041-2A1D-D996-347B-13E7D8334C5B</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="5F8AFAEC-8C7E-3027-3DB2-818DF82C2C8E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3D0754DA-31F3-CE8D-CB0A-96465DEB23FC" name="movie_revenues_movies_FK">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-06 23:47:14 UTC</createdTime>
+<generatorID>581A0041-2A1D-D996-347B-13E7D8334C5B</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5F8AFAEC-8C7E-3027-3DB2-818DF82C2C8E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

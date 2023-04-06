@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outDir": "../assets/",
+        "sourceMap": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "module": "ES6",
+        "moduleResolution": "node",
+        "target": "ES6",
+        "allowJs": true,
+        "strictPropertyInitialization": false
+    },
+    "include": ["./ts/**/*"]
+}
