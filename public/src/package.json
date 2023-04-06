@@ -1,8 +1,7 @@
 {
-    "name": "empty-project",
+    "name": "jscss",
     "version": "1.0.0",
     "description": "Thanks to createapp.dev",
-    "main": "index.js",
     "keywords": [],
     "author": "",
     "license": "ISC",
@@ -14,7 +13,6 @@
         "watch:prod": "webpack --progress --watch --mode production"
     },
     "dependencies": {
-        "@agcamacho/mrapi-webcomponents": "^0.0.1",
         "lodash": "^4.17.21"
     },
     "devDependencies": {

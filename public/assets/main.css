@@ -13,7 +13,8 @@
 /*!***************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./scss/styles.scss (3) ***!
   \***************************************************************************************************************/
-html, body {
+html,
+body {
   margin: 0;
   padding: 0; }
 
@@ -28,7 +29,7 @@ h1 {
   background-color: #000;
   color: #fff;
   font-family: sans-serif;
-  font-size: .8rem; }
+  font-size: 0.8rem; }
 
 #login-reg-form {
   margin-top: 90px;
@@ -274,7 +275,7 @@ figcaption {
     animation-iteration-count: infinite;
     animation-timing-function: linear; }
     .button-blue .fa-spinner:before {
-      font-size: .9em; }
+      font-size: 0.9em; }
   .button-blue:hover {
     background-color: #398cff; }
   .button-blue:active {
@@ -307,9 +308,9 @@ figcaption {
   text-transform: uppercase;
   text-decoration: none;
   color: #1e375a;
-  -webkit-transition: .3s;
-  -o-transition: .3s;
-  transition: .3s; }
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
   .nav-bar a:hover {
     color: #2364d2; }
 
@@ -390,7 +391,7 @@ figcaption {
       position: absolute;
       bottom: -17px;
       left: 0px;
-      font-size: .8em;
+      font-size: 0.8em;
       color: red; }
     .allinone-auth .login-reg-form__form__submit {
       width: 100%;
@@ -420,6 +421,14 @@ figcaption {
     color: #398cff; }
     .home-logged-in-message p a:hover {
       color: #2364d2; }
+
+.api-key-table__toolbar {
+  margin-bottom: 20px; }
+  .api-key-table__toolbar__generate {
+    width: 180px;
+    padding: 5px 0;
+    font-size: 1em;
+    font-weight: 600; }
 
 
 /*# sourceMappingURL=main.css.map*/

@@ -2,16 +2,17 @@ import { Component, State, h } from "@stencil/core";
 import axios from "axios";
 
 @Component({
-  tag: "agcamacho-api-key-form",
-  styleUrl: "./api-form.scss",
+  tag: "agcamacho-api-key-table",
+  styleUrl: "./api-key-table.scss",
   scoped: true,
 })
-export class ApiForm {
+export class ApiKeyTable {
   @State() apiKey: Date;
   @State() apiKeyCreated: string;
   @State() tableRowsObjs = [];
   @State() tableRowsEls = [];
   @State() tableRowId = 1;
+  @State() generateBtnDisabled = false;
 
   // After initial load processes
   connectedCallback() {
@@ -80,15 +81,15 @@ export class ApiForm {
     let rowsTemp = [];
     this.tableRowsObjs.forEach((row) => {
       let newRow = (
-        <div data-rowId={row.rowId}>
-          <div class="header__column header__column__apikeycreated">
+        <div data-rowId={row.rowId} class="api-key-table__row">
+          <div class="api-key-table__row__column api-key-table__row__column__apikeycreated">
             {row.created}
           </div>
-          <div class="header__column header__column__apikeyexpires"></div>
-          <div class="header__column header__column__apikey">
+          <div class="api-key-table__row__column api-key-table__row__column__apikeyexpires"></div>
+          <div class="api-key-table__row__column api-key-table__row__column__apikey">
             {row.apiKeyToShow}
           </div>
-          <div class="header__column header__column__actions">
+          <div class="api-key-table__row__column api-key-table__row__column__actions">
             <a data-rowId={row.rowId} onClick={(e) => this.onApiKeySee(e)}>
               See
             </a>
@@ -149,12 +150,13 @@ export class ApiForm {
     this.updateTableRows();
   }
 
-  // Form submit
+  // Generate key submit
   onGenerateApiKey(e: Event) {
     e.preventDefault();
     let that = this;
     console.log("generate key");
     let token = localStorage.getItem("token");
+    this.generateBtnDisabled = true;
     axios
       .post(
         "/admin/apikey",
@@ -167,33 +169,49 @@ export class ApiForm {
         console.log(res);
         let { apiKey, apiKeyCreated } = res.data;
         that.onTableRowCreate(apiKey, apiKeyCreated);
+        this.generateBtnDisabled = false;
       })
       .catch((err) => {
         console.log(err);
         console.log(err.code);
         console.log(err.response.status);
+        this.generateBtnDisabled = false;
       });
   }
 
   // Todo: add jsx for create new password
   render() {
     return (
-      <div id="api-key-form">
-        <button
-          class="form__generate button"
-          onClick={this.onGenerateApiKey.bind(this)}
-        >
-          Generate API Key
-        </button>
-        <div id="api-key-form__table">
-          <div id="api-key-form__table__header">
-            <div class="header__column header__column__apikeycreated">
+      <div class="api-key-table">
+        <div class="api-key-table__toolbar">
+          <button
+            class="api-key-table__toolbar__generate button button-blue"
+            disabled={this.generateBtnDisabled}
+            type="submit"
+            onClick={this.onGenerateApiKey.bind(this)}
+          >
+            {this.generateBtnDisabled ? (
+              <div>
+                <i class="fa-solid fa-spinner fa-spin"></i>
+              </div>
+            ) : (
+              <span>Generate API Key</span>
+            )}
+          </button>
+        </div>
+        <div class="api-key-table__wrapper">
+          <div class="api-key-table__header">
+            <div class="api-key-table__header_column api-key-table__header__column__apikeycreated">
               Created
             </div>
-            <div class="header__column header__column__apikey">API Key</div>
-            <div class="header__column header__column__actions">Actions</div>
+            <div class="api-key-table__header_column header__column api-key-table__header__column__apikey">
+              API Key
+            </div>
+            <div class="api-key-table__header_column header__column api-key-table__header__column__actions">
+              Actions
+            </div>
           </div>
-          <div id="api-key-form__table__body">{this.tableRowsEls}</div>
+          <div id="api-key-table__body">{this.tableRowsEls}</div>
         </div>
       </div>
     );

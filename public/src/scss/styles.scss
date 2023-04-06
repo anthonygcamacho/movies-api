@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
@@ -15,7 +16,7 @@ h1 {
     background-color: #000;
     color: #fff;
     font-family: sans-serif;
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
 
 #login-reg-form {
@@ -28,15 +29,15 @@ h1 {
 // @import "libs/lesshat/lesshat-prefixed.less";
 
 // // Variables, Functions, and Mixins
-@import 'helpers/variables';
-@import 'helpers/functions';
-@import 'helpers/mixins';
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
 
 // // Paddings, Margins, and Alignments
 // @import "helpers/helpers";
 
 // // Reset
-@import 'base/reset';
+@import "base/reset";
 
 // // Animate
 // @import "libs/animate/animate.less";
@@ -58,9 +59,9 @@ h1 {
 // @import "libs/font-awesome/font-awesome.less";
 
 // // Base
-@import 'base/fonts';
-@import 'base/base';
-@import 'base/typography';
+@import "base/fonts";
+@import "base/base";
+@import "base/typography";
 // @import "base/links";
 // @import "base/table";
 // @import "base/forms";
@@ -78,8 +79,8 @@ h1 {
 // @import 'pages/tos-pp';
 
 // // Module
-@import 'module/buttons';
-@import 'module/modal';
+@import "module/buttons";
+@import "module/modal";
 // @import "module/protest-banner.scss";
 // @import "module/protest-instructions";
 // @import "module/protest-locations";
@@ -92,18 +93,22 @@ h1 {
     color: #fff;
     border: 2px solid #2d6cc5;
     background-color: #398cff;
+
     .fa-spinner {
         animation-name: spin;
         animation-duration: 5000ms;
         animation-iteration-count: infinite;
-        animation-timing-function: linear; 
+        animation-timing-function: linear;
+
         &:before {
-            font-size: .9em;
+            font-size: 0.9em;
         }
     }
+
     &:hover {
         background-color: #398cff;
     }
+
     &:active {
         background-color: #2d6cc5;
     }
@@ -111,34 +116,36 @@ h1 {
 
 @keyframes spin {
     from {
-        transform:rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-        transform:rotate(360deg);
+        transform: rotate(360deg);
     }
 }
-
 
 .app-title-bar {
     padding: 21px;
     background-color: #006c91;
+
     span {
         display: block;
     }
+
     &__content {
         color: #fff;
+
         &__title {
             margin-bottom: 8px;
             font-size: 1.3em;
             font-weight: 600;
         }
+
         &__author {
             font-size: 1em;
         }
-
     }
 }
-
 
 .nav-bar {
     a {
@@ -148,9 +155,10 @@ h1 {
         text-transform: uppercase;
         text-decoration: none;
         color: #1e375a;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: .3s;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+
         &:hover {
             color: #2364d2;
         }
@@ -188,6 +196,7 @@ h1 {
     margin-bottom: 70px;
     padding: 20px;
     background-color: #ddd;
+
     &__content-wrapper {
         width: 830px;
         margin: 0 auto;
@@ -203,17 +212,21 @@ h1 {
     width: 500px;
     margin: 0 auto;
     display: block;
+
     .login-reg-form {
         &__component-error {
             @include form-error-msg;
         }
+
         &__header {
             text-align: left;
+
             &__title {
                 margin-bottom: 10px;
                 font-size: 1.6em;
                 font-weight: 600;
             }
+
             &__description {
                 margin-bottom: 20px;
                 font-size: 1.1em;
@@ -222,31 +235,38 @@ h1 {
                 color: #1e1e1e;
             }
         }
+
         &__general-message {
             @include form-error-msg;
         }
+
         &__form {
             margin-bottom: 35px;
+
             &__input-wrapper {
                 position: relative;
                 height: 43px;
                 margin-bottom: 25px;
             }
+
             &__input {
                 width: 100%;
                 padding: 9px 0px 9px 37px;
                 font-size: 1.1em;
+
                 &.invalid {
                     border-color: #ff0000;
                     background-color: #ffecec;
                 }
             }
+
             &__input-icon {
                 position: absolute;
                 bottom: 15px;
                 left: 13px;
                 font-size: 1em;
             }
+
             &__input-icon-eye {
                 position: absolute;
                 bottom: 15px;
@@ -254,25 +274,30 @@ h1 {
                 font-size: 1em;
                 cursor: pointer;
             }
+
             &__validation-msg {
                 position: absolute;
                 bottom: -17px;
                 left: 0px;
-                font-size: .8em;
+                font-size: 0.8em;
                 color: red;
             }
+
             // &__button-wrapper {}
             &__submit {
                 width: 100%;
                 padding: 9px;
                 font-size: 1.1em;
             }
-            &__reset-password, 
+
+            &__reset-password,
             &__back-to-login,
             &__create-account {
                 @include form-nav;
+
                 a {
                     @include form-nav-links;
+
                     &:hover {
                         @include form-nav-links-hover;
                     }
@@ -288,13 +313,33 @@ h1 {
         font-weight: 600;
         margin-bottom: 30px;
     }
+
     p {
         @include form-nav;
+
         a {
             @include form-nav-links;
+
             &:hover {
                 @include form-nav-links-hover;
             }
+        }
+    }
+}
+
+.account {
+    &__nav-bar {
+    }
+}
+
+.api-key-table {
+    &__toolbar {
+        margin-bottom: 20px;
+        &__generate {
+            width: 180px;
+            padding: 5px 0;
+            font-size: 1em;
+            font-weight: 600;
         }
     }
 }

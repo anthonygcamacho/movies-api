@@ -23,7 +23,7 @@ export namespace Components {
         "loginRedirectPath": string;
         "resetPasswordPath": string;
     }
-    interface AgcamachoApiKeyForm {
+    interface AgcamachoApiKeyTable {
     }
 }
 declare global {
@@ -33,15 +33,15 @@ declare global {
         prototype: HTMLAgcamachoAllinoneAuthV1Element;
         new (): HTMLAgcamachoAllinoneAuthV1Element;
     };
-    interface HTMLAgcamachoApiKeyFormElement extends Components.AgcamachoApiKeyForm, HTMLStencilElement {
+    interface HTMLAgcamachoApiKeyTableElement extends Components.AgcamachoApiKeyTable, HTMLStencilElement {
     }
-    var HTMLAgcamachoApiKeyFormElement: {
-        prototype: HTMLAgcamachoApiKeyFormElement;
-        new (): HTMLAgcamachoApiKeyFormElement;
+    var HTMLAgcamachoApiKeyTableElement: {
+        prototype: HTMLAgcamachoApiKeyTableElement;
+        new (): HTMLAgcamachoApiKeyTableElement;
     };
     interface HTMLElementTagNameMap {
         "agcamacho-allinone-auth-v1": HTMLAgcamachoAllinoneAuthV1Element;
-        "agcamacho-api-key-form": HTMLAgcamachoApiKeyFormElement;
+        "agcamacho-api-key-table": HTMLAgcamachoApiKeyTableElement;
     }
 }
 declare namespace LocalJSX {
@@ -62,11 +62,11 @@ declare namespace LocalJSX {
         "loginRedirectPath": string;
         "resetPasswordPath": string;
     }
-    interface AgcamachoApiKeyForm {
+    interface AgcamachoApiKeyTable {
     }
     interface IntrinsicElements {
         "agcamacho-allinone-auth-v1": AgcamachoAllinoneAuthV1;
-        "agcamacho-api-key-form": AgcamachoApiKeyForm;
+        "agcamacho-api-key-table": AgcamachoApiKeyTable;
     }
 }
 export { LocalJSX as JSX };
@@ -74,7 +74,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "agcamacho-allinone-auth-v1": LocalJSX.AgcamachoAllinoneAuthV1 & JSXBase.HTMLAttributes<HTMLAgcamachoAllinoneAuthV1Element>;
-            "agcamacho-api-key-form": LocalJSX.AgcamachoApiKeyForm & JSXBase.HTMLAttributes<HTMLAgcamachoApiKeyFormElement>;
+            "agcamacho-api-key-table": LocalJSX.AgcamachoApiKeyTable & JSXBase.HTMLAttributes<HTMLAgcamachoApiKeyTableElement>;
         }
     }
 }
