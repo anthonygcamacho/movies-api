@@ -1,10 +1,12 @@
 import { RequestHandler } from "express"
 import { createToken } from "../../utils/token"
+import { cookieReset } from "../../utils/cookiereset"
 
 // -------------------------------------------------------------------------------
 
 const loginUser: RequestHandler = async (req, res): Promise<void> => {
     if (req.user === "FAILED") {
+        cookieReset(req, res)
         res.status(404).json({
             error: { code: 404, message: "Incorrect email or password." },
         })

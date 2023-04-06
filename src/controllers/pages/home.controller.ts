@@ -19,8 +19,7 @@ export const homeController: RequestHandler = (req, res): void => {
 
     res.render("home", {
         page: "home",
-        // isAuthenticated: req.isAuthenticated(),
-        isAuthenticated: false,
+        isAuthenticated: req.isAuthenticated(),
         ENV,
         API_URL,
         LOGIN_PATH,

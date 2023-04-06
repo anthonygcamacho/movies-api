@@ -109,6 +109,7 @@ export class LoginRegForm {
     this.isPassword1Valid = "";
     this.password2 = "";
     this.isPassword2Valid = "";
+    this.generalMessageToggle = false;
   }
 
   // Todo: add type for create new password
@@ -368,7 +369,7 @@ export class LoginRegForm {
                       this.password1Type = "password";
                     }}
                   >
-                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-eye-slash"></i>
                   </a>
                 ) : (
                   <a
@@ -378,7 +379,7 @@ export class LoginRegForm {
                       this.password1Type = "text";
                     }}
                   >
-                    <i class="fa-solid fa-eye-slash"></i>
+                    <i class="fa-solid fa-eye"></i>
                   </a>
                 )}
               </div>
@@ -418,7 +419,7 @@ export class LoginRegForm {
                       this.password2Type = "password";
                     }}
                   >
-                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-eye-slash"></i>
                   </a>
                 ) : (
                   <a
@@ -428,7 +429,7 @@ export class LoginRegForm {
                       this.password2Type = "text";
                     }}
                   >
-                    <i class="fa-solid fa-eye-slash"></i>
+                    <i class="fa-solid fa-eye"></i>
                   </a>
                 )}
               </div>

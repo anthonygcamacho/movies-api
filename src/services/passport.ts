@@ -71,6 +71,7 @@ const passportInitialize = (passport: PassportStatic) => {
     passport.deserializeUser(async (id: number, done) => {
         // console.log("DESERIALIZE USER ===============================")
         // console.log(id)
+        if(typeof id === 'string' && id === 'FAILED') return done(null, 'FAILED')
         try {
             let userFound = await userModel.findUserById(id)
             if (userFound.length > 0) {
