@@ -81,15 +81,14 @@ export class ApiKeyTable {
     let rowsTemp = [];
     this.tableRowsObjs.forEach((row) => {
       let newRow = (
-        <div data-rowId={row.rowId} class="api-key-table__row">
-          <div class="api-key-table__row__column api-key-table__row__column__apikeycreated">
+        <tr data-rowId={row.rowId} class="api-key-table__body__row">
+          <td class="api-key-table__body__row__column api-key-table__row__column__apikeycreated">
             {row.created}
-          </div>
-          <div class="api-key-table__row__column api-key-table__row__column__apikeyexpires"></div>
-          <div class="api-key-table__row__column api-key-table__row__column__apikey">
+          </td>
+          <td class="api-key-table__body__row__column api-key-table__row__column__apikey">
             {row.apiKeyToShow}
-          </div>
-          <div class="api-key-table__row__column api-key-table__row__column__actions">
+          </td>
+          <td class="api-key-table__body__row__column api-key-table__row__column__actions">
             <a data-rowId={row.rowId} onClick={(e) => this.onApiKeySee(e)}>
               See
             </a>
@@ -99,8 +98,8 @@ export class ApiKeyTable {
             <a data-rowId={row.rowId} onClick={(e) => this.onTableRowRemove(e)}>
               Remove
             </a>
-          </div>
-        </div>
+          </td>
+        </tr>
       );
       rowsTemp.push(newRow);
     });
@@ -199,20 +198,22 @@ export class ApiKeyTable {
             )}
           </button>
         </div>
-        <div class="api-key-table__wrapper">
-          <div class="api-key-table__header">
-            <div class="api-key-table__header_column api-key-table__header__column__apikeycreated">
-              Created
-            </div>
-            <div class="api-key-table__header_column header__column api-key-table__header__column__apikey">
-              API Key
-            </div>
-            <div class="api-key-table__header_column header__column api-key-table__header__column__actions">
-              Actions
-            </div>
-          </div>
-          <div id="api-key-table__body">{this.tableRowsEls}</div>
-        </div>
+        <table class="api-key-table__table-wrapper">
+          <thead class="api-key-table__header">
+            <tr>
+              <th class="api-key-table__header__column api-key-table__header__column__apikeycreated">
+                Created
+              </th>
+              <th class="api-key-table__header__column api-key-table__header__column__apikey">
+                API Key
+              </th>
+              <th class="api-key-table__header__column api-key-table__header__column__actions">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody id="api-key-table__body">{this.tableRowsEls}</tbody>
+        </table>
       </div>
     );
   }

@@ -319,7 +319,6 @@ h1 {
 
         a {
             @include form-nav-links;
-
             &:hover {
                 @include form-nav-links-hover;
             }
@@ -327,19 +326,93 @@ h1 {
     }
 }
 
+$tablewidth: 1100px;
+
 .account {
     &__nav-bar {
+        &__nav {
+            width: $tablewidth;
+            margin: 0 auto;
+            text-align: right;
+            a {
+                @include form-nav-links;
+                font-size: 1.2em;
+                font-weight: 600;
+                text-transform: uppercase;
+                &:hover {
+                    @include form-nav-links-hover;
+                }
+            }
+        }
     }
 }
 
 .api-key-table {
+    width: $tablewidth;
+    margin: 0 auto;
+    table {
+        width: 100%;
+    }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th,
+    td {
+        border-color: #96d4d4;
+    }
+    tr th {
+        background-color: #575757;
+        color: white;
+        font-size: 1em;
+        font-weight: 700;
+        border-color: #1c1c1c;
+    }
+    th {
+        padding: 10px;
+    }
+    td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
     &__toolbar {
         margin-bottom: 20px;
+        text-align: left;
         &__generate {
             width: 180px;
             padding: 5px 0;
             font-size: 1em;
             font-weight: 600;
+        }
+    }
+    &__table-wrapper {
+        border-collapse: collapse;
+        border: 2;
+    }
+    &__header {
+        &__column {
+            &__apikeycreated {
+                width: 17%;
+            }
+            &__apikey {
+            }
+            &__actions {
+                width: 14%;
+            }
+        }
+    }
+    &__body {
+        &__row {
+            &__column {
+                &__apikeycreated {
+                }
+                &__apikey {
+                }
+                &__actions {
+                }
+            }
         }
     }
 }

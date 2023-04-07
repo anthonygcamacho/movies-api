@@ -422,13 +422,58 @@ figcaption {
     .home-logged-in-message p a:hover {
       color: #2364d2; }
 
-.api-key-table__toolbar {
-  margin-bottom: 20px; }
-  .api-key-table__toolbar__generate {
-    width: 180px;
-    padding: 5px 0;
+.account__nav-bar__nav {
+  width: 1100px;
+  margin: 0 auto;
+  text-align: right; }
+  .account__nav-bar__nav a {
+    text-decoration: none;
+    color: #398cff;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase; }
+    .account__nav-bar__nav a:hover {
+      color: #2364d2; }
+
+.api-key-table {
+  width: 1100px;
+  margin: 0 auto; }
+  .api-key-table table {
+    width: 100%; }
+  .api-key-table table,
+  .api-key-table th,
+  .api-key-table td {
+    border: 1px solid black;
+    border-collapse: collapse; }
+  .api-key-table th,
+  .api-key-table td {
+    border-color: #96d4d4; }
+  .api-key-table tr th {
+    background-color: #575757;
+    color: white;
     font-size: 1em;
-    font-weight: 600; }
+    font-weight: 700;
+    border-color: #1c1c1c; }
+  .api-key-table th {
+    padding: 10px; }
+  .api-key-table td {
+    padding: 10px;
+    font-size: 0.9em; }
+  .api-key-table__toolbar {
+    margin-bottom: 20px;
+    text-align: left; }
+    .api-key-table__toolbar__generate {
+      width: 180px;
+      padding: 5px 0;
+      font-size: 1em;
+      font-weight: 600; }
+  .api-key-table__table-wrapper {
+    border-collapse: collapse;
+    border: 2; }
+  .api-key-table__header__column__apikeycreated {
+    width: 17%; }
+  .api-key-table__header__column__actions {
+    width: 14%; }
 
 
 /*# sourceMappingURL=main.css.map*/
