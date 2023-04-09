@@ -361,7 +361,7 @@ $tablewidth: 1100px;
     }
     th,
     td {
-        border-color: #96d4d4;
+        border-color: black;
     }
     tr th {
         background-color: #575757;
@@ -374,8 +374,11 @@ $tablewidth: 1100px;
         padding: 10px;
     }
     td {
-        padding: 10px;
+        padding: 15px 10px;
         font-size: 0.9em;
+    }
+    &-section {
+        padding: 0 0 100px 0;
     }
     &__toolbar {
         margin-bottom: 20px;
@@ -385,6 +388,7 @@ $tablewidth: 1100px;
             padding: 5px 0;
             font-size: 1em;
             font-weight: 600;
+            cursor: pointer;
         }
     }
     &__table-wrapper {
@@ -409,8 +413,112 @@ $tablewidth: 1100px;
                 &__apikeycreated {
                 }
                 &__apikey {
+                    &.apikey-show-true {
+                        .apikey-show-true {
+                            display: block;
+                        }
+                        .apikey-show-false {
+                            display: none;
+                        }
+                    }
+                    &.apikey-show-false {
+                        .apikey-show-true {
+                            display: none;
+                        }
+                        .apikey-show-false {
+                            display: block;
+                        }
+                    }
+                    &__asterisk {
+                        width: 470px;
+                        display: inline-block;
+                        text-align: left;
+                    }
+                    &__hint {
+                        letter-spacing: 2px;
+                        margin-left: 4px;
+                        display: inline-block;
+                        width: 60px;
+                        text-align: left;
+                    }
                 }
                 &__actions {
+                    a {
+                        display: inline-block;
+                        margin: 0 9px;
+                        cursor: pointer;
+                    }
+                    &__copy {
+                        &:active .fa-copy {
+                            color: #8b8b8b;
+                        }
+                    }
+                    .delete-link {
+                        position: relative;
+                        .fa-solid {
+                            color: red;
+                        }
+                        .confirm-wrapper {
+                            z-index: 10;
+                            position: absolute;
+                            display: flex;
+                            flex-flow: column;
+                            align-items: end;
+                            top: 0;
+                            right: 0;
+                            &__icon {
+                                width: 30px;
+                                height: 25px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: white;
+                                border-top: 2px solid black;
+                                border-left: 2px solid black;
+                                border-right: 2px solid black;
+                                .fa-solid {
+                                    color: black;
+                                }
+                            }
+                            &__actions {
+                                padding: 15px 10px;
+                                display: flex;
+                                background-color: white;
+                                border: 2px solid black;
+                                position: relative;
+                                &__placeholder {
+                                    width: 26px;
+                                    height: 2px;
+                                    position: absolute;
+                                    top: -2px;
+                                    right: 0;
+                                    background-color: #fff;
+                                }
+                                button {
+                                    margin: 0 10px;
+                                    padding: 6px 17px;
+                                    font-size: 1em;
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                }
+                                &__cancel {
+                                    color: #3c3c3c;
+                                    background-color: #d7d7d7;
+                                    border: 2px solid #8d8d8d;
+                                }
+                                &__confirm {
+                                    width: 93px;
+                                    color: #fff;
+                                    text-align: center;
+                                    background-color: red;
+                                    border: 2px solid #cb0000;
+                                    .fa-solid {
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

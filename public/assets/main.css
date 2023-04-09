@@ -447,7 +447,7 @@ figcaption {
     border-collapse: collapse; }
   .api-key-table th,
   .api-key-table td {
-    border-color: #96d4d4; }
+    border-color: black; }
   .api-key-table tr th {
     background-color: #575757;
     color: white;
@@ -457,8 +457,10 @@ figcaption {
   .api-key-table th {
     padding: 10px; }
   .api-key-table td {
-    padding: 10px;
+    padding: 15px 10px;
     font-size: 0.9em; }
+  .api-key-table-section {
+    padding: 0 0 100px 0; }
   .api-key-table__toolbar {
     margin-bottom: 20px;
     text-align: left; }
@@ -466,7 +468,8 @@ figcaption {
       width: 180px;
       padding: 5px 0;
       font-size: 1em;
-      font-weight: 600; }
+      font-weight: 600;
+      cursor: pointer; }
   .api-key-table__table-wrapper {
     border-collapse: collapse;
     border: 2; }
@@ -474,6 +477,85 @@ figcaption {
     width: 17%; }
   .api-key-table__header__column__actions {
     width: 14%; }
+  .api-key-table__body__row__column__apikey.apikey-show-true .apikey-show-true {
+    display: block; }
+  .api-key-table__body__row__column__apikey.apikey-show-true .apikey-show-false {
+    display: none; }
+  .api-key-table__body__row__column__apikey.apikey-show-false .apikey-show-true {
+    display: none; }
+  .api-key-table__body__row__column__apikey.apikey-show-false .apikey-show-false {
+    display: block; }
+  .api-key-table__body__row__column__apikey__asterisk {
+    width: 470px;
+    display: inline-block;
+    text-align: left; }
+  .api-key-table__body__row__column__apikey__hint {
+    letter-spacing: 2px;
+    margin-left: 4px;
+    display: inline-block;
+    width: 60px;
+    text-align: left; }
+  .api-key-table__body__row__column__actions a {
+    display: inline-block;
+    margin: 0 9px;
+    cursor: pointer; }
+  .api-key-table__body__row__column__actions__copy:active .fa-copy {
+    color: #8b8b8b; }
+  .api-key-table__body__row__column__actions .delete-link {
+    position: relative; }
+    .api-key-table__body__row__column__actions .delete-link .fa-solid {
+      color: red; }
+    .api-key-table__body__row__column__actions .delete-link .confirm-wrapper {
+      z-index: 10;
+      position: absolute;
+      display: flex;
+      flex-flow: column;
+      align-items: end;
+      top: 0;
+      right: 0; }
+      .api-key-table__body__row__column__actions .delete-link .confirm-wrapper__icon {
+        width: 30px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        border-right: 2px solid black; }
+        .api-key-table__body__row__column__actions .delete-link .confirm-wrapper__icon .fa-solid {
+          color: black; }
+      .api-key-table__body__row__column__actions .delete-link .confirm-wrapper__actions {
+        padding: 15px 10px;
+        display: flex;
+        background-color: white;
+        border: 2px solid black;
+        position: relative; }
+        .api-key-table__body__row__column__actions .delete-link .confirm-wrapper__actions__placeholder {
+          width: 26px;
+          height: 2px;
+          position: absolute;
+          top: -2px;
+          right: 0;
+          background-color: #fff; }
+        .api-key-table__body__row__column__actions .delete-link .confirm-wrapper__actions button {
+          margin: 0 10px;
+          padding: 6px 17px;
+          font-size: 1em;
+          font-weight: 600;
+          cursor: pointer; }
+        .api-key-table__body__row__column__actions .delete-link .confirm-wrapper__actions__cancel {
+          color: #3c3c3c;
+          background-color: #d7d7d7;
+          border: 2px solid #8d8d8d; }
+        .api-key-table__body__row__column__actions .delete-link .confirm-wrapper__actions__confirm {
+          width: 93px;
+          color: #fff;
+          text-align: center;
+          background-color: red;
+          border: 2px solid #cb0000; }
+          .api-key-table__body__row__column__actions .delete-link .confirm-wrapper__actions__confirm .fa-solid {
+            color: white; }
 
 
 /*# sourceMappingURL=main.css.map*/

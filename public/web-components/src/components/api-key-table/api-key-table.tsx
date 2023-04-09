@@ -13,10 +13,11 @@ export class ApiKeyTable {
   @State() tableRowsEls = [];
   @State() tableRowId = 1;
   @State() generateBtnDisabled = false;
+  @State() apiKeyShow: false;
 
   // After initial load processes
   connectedCallback() {
-    // let that = this;
+    let that = this;
     let token = localStorage.getItem("token");
     axios
       .get("/admin/apikey", {
@@ -25,19 +26,7 @@ export class ApiKeyTable {
       .then((res) => {
         console.log("get all", res);
         let apiKeysMapped = res.data.map((item) => {
-          let apiKeyBlocked = `***********************************************************${item.api_key.slice(
-            -5
-          )}`;
-          let newRow = {
-            rowId: this.tableRowId,
-            apiKey: item.api_key,
-            apiKeyBlocked,
-            apiKeyShow: "hide",
-            apiKeyToShow: apiKeyBlocked,
-            created: item.api_key_created,
-          };
-          ++this.tableRowId;
-          return newRow;
+          return that.onTableRowCreate(item.api_key, item.api_key_created);
         });
         this.tableRowsObjs = [...[], ...apiKeysMapped];
         this.updateTableRows();
@@ -66,14 +55,16 @@ export class ApiKeyTable {
     let el = e.target as HTMLElement;
     let rowId = el.getAttribute("data-rowId");
     let rowObj = this.getRowObj(rowId);
-    console.log(rowObj);
-    if (rowObj[0].apiKeyShow == "hide") {
-      rowObj[0].apiKeyToShow = rowObj[0].apiKey;
-      rowObj[0].apiKeyShow = "show";
-    } else {
-      rowObj[0].apiKeyToShow = rowObj[0].apiKeyBlocked;
-      rowObj[0].apiKeyShow = "hide";
-    }
+    rowObj[0].apiKeyShow = !rowObj[0].apiKeyShow;
+    this.updateTableRows();
+  }
+
+  onDeleteConfirmToggle(e: Event) {
+    e.preventDefault();
+    let el = e.target as HTMLElement;
+    let rowId = el.getAttribute("data-rowId");
+    let rowObj = this.getRowObj(rowId);
+    rowObj[0].deleteConfirmShow = !rowObj[0].deleteConfirmShow;
     this.updateTableRows();
   }
 
@@ -82,22 +73,73 @@ export class ApiKeyTable {
     this.tableRowsObjs.forEach((row) => {
       let newRow = (
         <tr data-rowId={row.rowId} class="api-key-table__body__row">
-          <td class="api-key-table__body__row__column api-key-table__row__column__apikeycreated">
+          <td class="api-key-table__body__row__column api-key-table__body__row__column__apikeycreated">
             {row.created}
           </td>
-          <td class="api-key-table__body__row__column api-key-table__row__column__apikey">
-            {row.apiKeyToShow}
+          <td
+            class={
+              "api-key-table__body__row__column api-key-table__body__row__column__apikey apikey-show-" +
+              row.apiKeyShow
+            }
+          >
+            {row.apiKeyEl}
           </td>
-          <td class="api-key-table__body__row__column api-key-table__row__column__actions">
+          <td class="api-key-table__body__row__column api-key-table__body__row__column__actions">
             <a data-rowId={row.rowId} onClick={(e) => this.onApiKeySee(e)}>
-              See
+              {row.apiKeyShow ? (
+                <i data-rowId={row.rowId} class="fa-solid fa-eye-slash"></i>
+              ) : (
+                <i data-rowId={row.rowId} class="fa-solid fa-eye"></i>
+              )}
             </a>
-            <a data-rowId={row.rowId} onClick={(e) => this.onApiKeyCopy(e)}>
-              Copy
+            <a
+              class="api-key-table__body__row__column__actions__copy"
+              data-rowId={row.rowId}
+              onClick={(e) => this.onApiKeyCopy(e)}
+            >
+              <i data-rowId={row.rowId} class="fa-regular fa-copy"></i>
             </a>
-            <a data-rowId={row.rowId} onClick={(e) => this.onTableRowRemove(e)}>
-              Remove
-            </a>
+            <span class="delete-link">
+              <a
+                data-rowId={row.rowId}
+                onClick={(e) => this.onDeleteConfirmToggle(e)}
+              >
+                <i data-rowId={row.rowId} class="fa-solid fa-trash"></i>
+              </a>
+              {row.deleteConfirmShow ? (
+                <div class="confirm-wrapper">
+                  <div class="confirm-wrapper__icon">
+                    <i data-rowId={row.rowId} class="fa-solid fa-trash"></i>
+                  </div>
+                  <div class="confirm-wrapper__actions">
+                    <span class="confirm-wrapper__actions__placeholder"></span>
+                    <button
+                      class="confirm-wrapper__actions__cancel"
+                      data-rowId={row.rowId}
+                      onClick={(e) => this.onDeleteConfirmToggle(e)}
+                    >
+                      Cancel
+                    </button>{" "}
+                    <button
+                      class="confirm-wrapper__actions__confirm"
+                      data-rowId={row.rowId}
+                      onClick={(e) => this.onTableRowRemove(e)}
+                      disabled={row.deleteConfirmBtnDisabled}
+                    >
+                      {row.deleteConfirmBtnDisabled ? (
+                        <div>
+                          <i class="fa-solid fa-spinner fa-spin"></i>
+                        </div>
+                      ) : (
+                        <span data-rowId={row.rowId}>Confirm</span>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+            </span>
           </td>
         </tr>
       );
@@ -111,6 +153,8 @@ export class ApiKeyTable {
     let el = e.target as HTMLElement;
     let rowId = el.getAttribute("data-rowId");
     let rowObj = this.getRowObj(rowId);
+    rowObj[0].deleteConfirmBtnDisabled = true;
+    this.updateTableRows();
     let token = localStorage.getItem("token");
     axios
       .delete("/admin/apikey", {
@@ -120,7 +164,6 @@ export class ApiKeyTable {
         },
       })
       .then((res) => {
-        console.log(res);
         this.tableRowsObjs = this.tableRowsObjs.filter((row) => {
           return row.rowId != rowId;
         });
@@ -132,28 +175,36 @@ export class ApiKeyTable {
   }
 
   onTableRowCreate(apiKey: string, created: string) {
-    let apiKeyBlocked = `***********************************************************${apiKey.slice(
-      -5
-    )}`;
+    let apiKeyEl = (
+      <div>
+        <div class="apikey-show-true">{apiKey}</div>
+        <div class="apikey-show-false">
+          <span class="api-key-table__body__row__column__apikey__asterisk">
+            ***********************************************************
+          </span>
+          <span class="api-key-table__body__row__column__apikey__hint">
+            {apiKey.slice(-5)}
+          </span>
+        </div>
+      </div>
+    );
     let newRow = {
       rowId: this.tableRowId,
       apiKey,
-      apiKeyBlocked,
-      apiKeyShow: "hide",
-      apiKeyToShow: apiKeyBlocked,
+      apiKeyShow: false,
+      deleteConfirmShow: false,
+      deleteConfirmBtnDisabled: false,
+      apiKeyEl,
       created,
     };
-    this.tableRowsObjs = [...this.tableRowsObjs, newRow];
-    console.log(this.tableRowsObjs);
     ++this.tableRowId;
-    this.updateTableRows();
+    return newRow;
   }
 
   // Generate key submit
   onGenerateApiKey(e: Event) {
     e.preventDefault();
     let that = this;
-    console.log("generate key");
     let token = localStorage.getItem("token");
     this.generateBtnDisabled = true;
     axios
@@ -165,9 +216,10 @@ export class ApiKeyTable {
         }
       )
       .then((res) => {
-        console.log(res);
         let { apiKey, apiKeyCreated } = res.data;
-        that.onTableRowCreate(apiKey, apiKeyCreated);
+        let newRow = that.onTableRowCreate(apiKey, apiKeyCreated);
+        this.tableRowsObjs = [...this.tableRowsObjs, newRow];
+        this.updateTableRows();
         this.generateBtnDisabled = false;
       })
       .catch((err) => {
