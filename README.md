@@ -28,7 +28,7 @@ From root of project folder
 > npm run serve:dev
 ```
 
-### CSS & JS Dev
+### CSS & JS
 
 Go into public folder to start Webpack watch script.
 
@@ -42,7 +42,7 @@ Running Webpack watch script, watches for changes to ts and scss files.
 > npm run watch:dev
 ```
 
-### Web Component Dev
+### Web Component
 
 Go into public folder to start Webpack watch script.
 
