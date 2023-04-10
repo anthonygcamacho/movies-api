@@ -4,7 +4,8 @@
         "build": "tsc",
         "watch:build": "tsc -w",
         "watch:run": "nodemon lib/index.js",
-        "serve:dev": "concurrently npm:watch:*"
+        "serve:dev": "concurrently npm:watch:*",
+        "start": "node lib/index.js"
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",

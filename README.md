@@ -6,69 +6,98 @@ Thank you for checking out what I can do with NodeJS / Express. This is just an 
 
 ### In this application you will find these features:
 
-| Feature          | Description                                      |
-| :--------------- | :----------------------------------------------- |
-| Express          | Site and API Routing                             |
-| Firebase Hosting | Express used as a Firebase Function              |
-| AWS RDS          | Using AWS Relational Database Service (Postgres) |
-| Swagger          | OpenAPI 3.0 Standard API Route Documentation     |
-| TypeScript       | Coded in TypeScript                              |
-| PG-Promise       | PostgreSQL Interface for NodeJS                  |
-| Morgan           | Logging                                          |
-| Helmet / Cors    | Security                                         |
-| Jest Testing     | Integration and Unit Tests                       |
-| Handlebars       | Todo                                             |
-| Token Based Auth | Todo                                             |
+| Feature       | Description                                  |
+| :------------ | :------------------------------------------- |
+| Express       | Site and API Routing                         |
+| Auth          | Passport-Local and Passport-JWT              |
+| AWS RDS       | AWS Relational Database Service (Postgres)   |
+| Swagger       | OpenAPI 3.0 Standard API Route Documentation |
+| TypeScript    | Coded in TypeScript                          |
+| PG-Promise    | PostgreSQL Interface for NodeJS              |
+| Morgan        | Logging                                      |
+| Helmet / Cors | Security                                     |
+| Jest Testing  | Integration and Unit Tests                   |
 
 ## Development
 
-### Start local server
+### Start local server and TypeScript watch
 
 From root of project folder
 
 ```
-> firebase serve
+> npm run serve:dev
 ```
 
-### Back-End
-
-Go into functions folder to start TypeScript watch script.
-
-```
-> npm run build:watch
-```
-
-### Front-End
+### CSS & JS Dev
 
 Go into public folder to start Webpack watch script.
 
 ```
-> cd public
+> cd public/src
 ```
 
 Running Webpack watch script, watches for changes to ts and scss files.
 
 ```
-> npm run watch
+> npm run watch:dev
 ```
 
-### Deploy to Firebase project
+### Web Component Dev
 
-From root of project folder
+Go into public folder to start Webpack watch script.
 
 ```
-> firebase deploy
+> cd public/web-components
+```
+
+StencilJS watch
+
+```
+> npm run watch:dev
+```
+
+### Docker
+
+Build container
+
+```
+> docker build . -t anthonygcamacho/movies-api
+```
+
+Run container locally
+
+```
+> docker run --env-file=.env -it -p 8000:8000 anthonygcamacho/movies-api
 ```
 
 ## Database Model
 
 [Modeled database using Oracle SQL Developer Data Modeler](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/#:~:text=Oracle%20SQL%20Developer%20Data%20Modeler%20is%20a%20free%20graphical%20tool,dimensional%2C%20and%20data%20type%20models.)
 
-![Movies REST API - Databasee](https://github.com/anthonygcamacho/movies-rest-api/blob/main/data-model.png?raw=true)
+![Movies REST API - Databasee](https://github.com/anthonygcamacho/movies-api/blob/master/data-model.png?raw=true)
 
 ## Resources
 
 [Createapp.dev - Webpack Boilerplate](https://www.youtube.com/watch?v=Ij8SJe_mwpU)
 
-[Firebase Functions timeout when querying AWS RDS PostgreSQL database](https://stackoverflow.com/questions/63384587/firebase-functions-timeout-when-querying-aws-rds-postgresql-database)
-# movies-api
+### Todos
+
+1. Close button for site message
+2. API:
+    - Api Key validation
+    - Dummy key validation
+3. Docker setup:
+    - Docker file
+    - Docker upload
+4. AWS:
+    - EC2 instance
+    - Domain setup
+    - TSL setup
+    - S3 bucket for env
+5. Documentation:
+    - Site: README.md, home page, account page
+    - Swagger:
+
+```
+
+```

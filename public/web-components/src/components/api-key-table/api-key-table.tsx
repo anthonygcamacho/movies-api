@@ -164,10 +164,11 @@ export class ApiKeyTable {
         },
       })
       .then((res) => {
+        console.log(res.data);
         this.tableRowsObjs = this.tableRowsObjs.filter((row) => {
           return row.rowId != rowId;
         });
-        this.updateTableRows();
+        return this.updateTableRows();
       })
       .catch((err) => {
         console.log(err);

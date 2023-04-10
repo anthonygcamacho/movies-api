@@ -1,7 +1,22 @@
-FROM node:lts-alpine
+FROM node:18.15.0-alpine3.17
 
 WORKDIR /app
 
-COPY . .
+# Install server dependencies
+COPY package*.json ./
+RUN npm install --omit=dev
 
-RUN npm install --only=production
+# Install web component dependencies
+COPY public/web-components/package*.json public/web-components/
+RUN npm install --omit=dev --prefix public/web-components
+
+# Copy all app files
+COPY lib/ lib/
+COPY public/assets/ public/assets/
+COPY public/web-components/ public/web-components/
+
+# Switch to node user
+USER node
+
+# Start server
+CMD [ "npm", "start" ]

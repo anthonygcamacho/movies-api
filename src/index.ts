@@ -24,7 +24,7 @@ app.use(helmet())
 app.use(morgan("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-const publicDirectoryPath = path.join(__dirname, '../public')
+const publicDirectoryPath = path.join(__dirname, "../public")
 app.use(express.static(publicDirectoryPath))
 
 // Cookies
@@ -65,7 +65,7 @@ app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 // Routes
 app.use("/", routes)
 
-let port = 3000
+let port = process.env.PORT || 8000
 app.listen(port, () => {
     console.log(`App listening on: ${port}`)
 })
