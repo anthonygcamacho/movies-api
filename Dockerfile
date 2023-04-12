@@ -18,5 +18,7 @@ COPY public/web-components/ public/web-components/
 # Switch to node user
 USER node
 
+EXPOSE 8000
+
 # Start server
 CMD [ "npm", "start" ]

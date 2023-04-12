@@ -70,6 +70,12 @@ Run container locally
 > docker run --env-file=.env -it -p 8000:8000 anthonygcamacho/movies-api
 ```
 
+Push to repo
+
+```
+> docker push anthonygcamacho/movies-api
+```
+
 ## Database Model
 
 [Modeled database using Oracle SQL Developer Data Modeler](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/#:~:text=Oracle%20SQL%20Developer%20Data%20Modeler%20is%20a%20free%20graphical%20tool,dimensional%2C%20and%20data%20type%20models.)
