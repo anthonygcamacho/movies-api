@@ -1,3 +1,4 @@
+import * as path from "path"
 import * as swaggerJsdoc from "swagger-jsdoc"
 
 // -------------------------------------------------------------------------------
@@ -24,7 +25,7 @@ const options: swaggerJsdoc.Options = {
             },
         ],
     },
-    apis: ["./src/routes/api/v1/*.ts"],
+    apis: [path.join(__dirname, "../routes/api/v1/*.js")],
 }
 
 export const swaggerSpec = swaggerJsdoc(options)

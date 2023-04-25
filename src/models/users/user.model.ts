@@ -35,7 +35,7 @@ const findUserByEmail = async (email: string): Promise<User[] | []> => {
 const findUserByApiKey = async (apikey: string): Promise<User[] | []> => {
     const findUserByApiKeyQuery = new PS({
         name: "find-user-by-api-key",
-        text: "SELECT * FROM users WHERE apikey = $1",
+        text: "SELECT * FROM apikeys WHERE api_key = $1",
         values: [apikey],
     })
     return await db.query(findUserByApiKeyQuery)

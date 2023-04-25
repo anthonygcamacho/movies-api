@@ -314,22 +314,33 @@ figcaption {
   .nav-bar a:hover {
     color: #2364d2; }
 
-.form-intro-section {
-  margin-bottom: 70px;
+.site-warning-section {
   padding: 20px;
   background-color: #ddd; }
-  .form-intro-section__content-wrapper {
+  .site-warning-section__content-wrapper {
     width: 830px;
     margin: 0 auto;
     padding: 30px;
     border: 5px solid #abab07;
     background-color: #525228;
     text-align: left;
-    color: yellow; }
+    color: yellow;
+    position: relative; }
+  .site-warning-section__close {
+    padding: 5px 10px;
+    background-color: #abab07;
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    top: -5px;
+    right: -5px; }
+    .site-warning-section__close:hover {
+      color: #ddd; }
 
 .allinone-auth {
   width: 500px;
   margin: 0 auto;
+  margin-top: 90px;
   display: block; }
   .allinone-auth .login-reg-form__component-error {
     border: 3px solid red;
@@ -407,24 +418,27 @@ figcaption {
         .allinone-auth .login-reg-form__form__reset-password a:hover, .allinone-auth .login-reg-form__form__back-to-login a:hover, .allinone-auth .login-reg-form__form__create-account a:hover {
           color: #2364d2; }
 
-.home-logged-in-message h2 {
-  font-size: 2em;
-  font-weight: 600;
-  margin-bottom: 30px; }
-
-.home-logged-in-message p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  font-weight: 600; }
-  .home-logged-in-message p a {
-    text-decoration: none;
-    color: #398cff; }
-    .home-logged-in-message p a:hover {
-      color: #2364d2; }
+.home-logged-in-message {
+  margin: 0 auto;
+  margin-top: 90px; }
+  .home-logged-in-message h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 30px; }
+  .home-logged-in-message p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: 600; }
+    .home-logged-in-message p a {
+      text-decoration: none;
+      color: #398cff; }
+      .home-logged-in-message p a:hover {
+        color: #2364d2; }
 
 .account__nav-bar__nav {
   width: 1100px;
   margin: 0 auto;
+  margin-top: 20px;
   text-align: right; }
   .account__nav-bar__nav a {
     text-decoration: none;
@@ -437,7 +451,8 @@ figcaption {
 
 .api-key-table {
   width: 1100px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 70px; }
   .api-key-table table {
     width: 100%; }
   .api-key-table table,

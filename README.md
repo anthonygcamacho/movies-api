@@ -88,22 +88,16 @@ Push to repo
 
 ### Todos
 
-1. Close button for site message
-2. API:
-    - Api Key validation
-    - Dummy key validation
-3. Docker setup:
-    - Docker file
-    - Docker upload
-4. AWS:
-    - EC2 instance
-    - Domain setup
-    - TSL setup
-    - S3 bucket for env
-5. Documentation:
+1. API:
+    - login form
+        - reset password
+2. AWS:
+    - reset password
+    - CI/CD?
+3. Documentation:
     - Site: README.md, home page, account page
     - Swagger:
+        - https://blog.logrocket.com/documenting-express-js-api-swagger/
 
-```
-
-```
+PGAdmin Docker Container
+https://www.youtube.com/watch?v=RUeTKUf6JV0

@@ -40,14 +40,21 @@ const remove = async (id: number, apiKey: string) => {
 }
 
 const validate: RequestHandler = async (req, res, next) => {
-    const apiKey = req.params.apikey
-    let userFound = await userModel.findUserByApiKey(apiKey)
-    if (userFound.length > 0) {
-        next()
-    } else {
+    if (!req.query.api_key) {
         res.status(403).send({
             error: { code: 403, message: "Access not allowed." },
         })
+    } else {
+        const apiKey = req.query.api_key.toString()
+        console.log(typeof apiKey)
+        let userFound = await userModel.findUserByApiKey(apiKey)
+        if (userFound.length > 0) {
+            next()
+        } else {
+            res.status(403).send({
+                error: { code: 403, message: "Access not allowed." },
+            })
+        }
     }
 }
 

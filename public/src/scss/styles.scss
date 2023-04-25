@@ -192,8 +192,7 @@ h1 {
     color: #2364d2;
 }
 
-.form-intro-section {
-    margin-bottom: 70px;
+.site-warning-section {
     padding: 20px;
     background-color: #ddd;
 
@@ -205,12 +204,26 @@ h1 {
         background-color: #525228;
         text-align: left;
         color: yellow;
+        position: relative;
+    }
+    &__close {
+        padding: 5px 10px;
+        background-color: #abab07;
+        color: #fff;
+        font-size: 30px;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        &:hover {
+            color: #ddd;
+        }
     }
 }
 
 .allinone-auth {
     width: 500px;
     margin: 0 auto;
+    margin-top: 90px;
     display: block;
 
     .login-reg-form {
@@ -308,6 +321,8 @@ h1 {
 }
 
 .home-logged-in-message {
+    margin: 0 auto;
+    margin-top: 90px;
     h2 {
         font-size: 2em;
         font-weight: 600;
@@ -333,6 +348,7 @@ $tablewidth: 1100px;
         &__nav {
             width: $tablewidth;
             margin: 0 auto;
+            margin-top: 20px;
             text-align: right;
             a {
                 @include form-nav-links;
@@ -350,6 +366,7 @@ $tablewidth: 1100px;
 .api-key-table {
     width: $tablewidth;
     margin: 0 auto;
+    margin-top: 70px;
     table {
         width: 100%;
     }

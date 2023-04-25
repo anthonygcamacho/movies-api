@@ -67,5 +67,6 @@ app.use("/", routes)
 
 let port = process.env.PORT || 8000
 app.listen(port, () => {
+    console.log(`Update 4.`)
     console.log(`App listening on: ${port}`)
 })

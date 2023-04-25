@@ -12,3 +12,10 @@ logoutEl?.addEventListener("click", (e) => {
     localStorage.removeItem("token")
     window.location.href = "/auth/logout"
 })
+
+let closeWarning = document.querySelector(".site-warning-section__close")
+let warning = document.querySelector(".site-warning-section") as HTMLElement
+closeWarning?.addEventListener("click", (e) => {
+    e.preventDefault()
+    warning.style.display = "none"
+})

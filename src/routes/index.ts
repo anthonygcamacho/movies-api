@@ -7,12 +7,14 @@ import authRoutes from "./auth"
 import usersRoutes from "./users"
 import adminRoutes from "./admin"
 import { ErrorWithStatus } from "../types/ErrorWithStatus"
+import apikey from "../utils/apikey"
+// import apikey from "../utils/apikey"
 
 // -------------------------------------------------------------------------------
 
 const router = express.Router()
 
-router.use("/api/v1", cors(), apiRoutes)
+router.use("/api/v1", cors({ origin: "*" }), apikey.validate, apiRoutes)
 router.use("/auth", authRoutes)
 router.use("/users", usersRoutes)
 router.use("/admin", adminRoutes)
