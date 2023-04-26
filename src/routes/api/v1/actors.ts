@@ -8,22 +8,11 @@ const router = express.Router()
 
 /**
  * @swagger
- * components:
- *   ApiKeyAuth:
- *     type: apiKey
- *     in: query
- *     name: api_key
- */
-
-/**
- * @swagger
  * /api/v1/actors:
  *   get:
  *     tags:
  *     - Actors
  *     summary: Get actors
- *     security:
- *       - ApiKeyAuth: []
  *     responses:
  *       200:
  *         description: A list of actors
