@@ -20,7 +20,9 @@ Thank you for checking out what I can do with NodeJS / Express. This is just an 
 
 ## Development
 
-### Start local server and TypeScript watch
+#### Back-end
+
+#### Start local server and watch changes
 
 From root of project folder
 
@@ -28,7 +30,9 @@ From root of project folder
 > npm run serve:dev
 ```
 
-### CSS & JS
+### Front-end
+
+#### CSS & JS
 
 Go into public folder to start Webpack watch script.
 
@@ -48,7 +52,7 @@ Build for Prod
 > npm run build:prod
 ```
 
-### Web Component
+#### Web Component
 
 Go into public folder to start Webpack watch script.
 
@@ -70,23 +74,7 @@ Build for Prod
 
 ### Docker
 
-Build container
-
-```
-> docker build . -t anthonygcamacho/movies-api
-```
-
-Run container locally
-
-```
-> docker run --env-file=.env -it -p 8000:8000 anthonygcamacho/movies-api
-```
-
-Push to repo
-
-```
-> docker push anthonygcamacho/movies-api
-```
+Goto AWS Console for ECR and follow instructions for building and deployment.
 
 ## Database Model
 
@@ -112,6 +100,3 @@ Push to repo
     - CI/CD?
 3. Documentation:
     - Site: README.md, home page, account page
-
-PGAdmin Docker Container
-https://www.youtube.com/watch?v=RUeTKUf6JV0
