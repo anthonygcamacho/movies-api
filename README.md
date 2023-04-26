@@ -72,7 +72,7 @@ Build for Prod
 > npm run build:prod
 ```
 
-### Docker
+### Docker Container build and deploy
 
 Goto AWS Console for ECR and follow instructions for building and deployment.
 
