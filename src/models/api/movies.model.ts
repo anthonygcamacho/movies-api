@@ -20,10 +20,14 @@ const getMovieById = async (movieId: string): Promise<Movie> => {
     return await db.one(getMovieByIDQuery)
 }
 
-const getMovies = async (): Promise<Movie[]> => {
+const getMovies = async (
+    offset: number | undefined,
+    limit: number | undefined
+): Promise<Movie[]> => {
     const getMoviesQuery = new PS({
         name: "get-movies",
-        text: "SELECT * FROM movies",
+        text: "SELECT * FROM movies OFFSET $1 LIMIT $2",
+        values: [offset, limit || 1000],
     })
     return await db.many(getMoviesQuery)
 }

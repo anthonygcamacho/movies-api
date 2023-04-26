@@ -18,10 +18,14 @@ const getDirectorById = async (directorId: string): Promise<Director> => {
     return await db.one(getDirectorByIdQuery)
 }
 
-const getDirectors = async (): Promise<Director[]> => {
+const getDirectors = async (
+    offset: number | undefined,
+    limit: number | undefined
+): Promise<Director[]> => {
     const getDirectorsQuery = new PS({
         name: "get-directors",
-        text: "SELECT * FROM directors",
+        text: "SELECT * FROM directors OFFSET $1 LIMIT $2",
+        values: [offset, limit || 1000],
     })
     return await db.many(getDirectorsQuery)
 }

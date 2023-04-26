@@ -42,6 +42,12 @@ Running Webpack watch script, watches for changes to ts and scss files.
 > npm run watch:dev
 ```
 
+Build for Prod
+
+```
+> npm run build:prod
+```
+
 ### Web Component
 
 Go into public folder to start Webpack watch script.
@@ -54,6 +60,12 @@ StencilJS watch
 
 ```
 > npm run watch:dev
+```
+
+Build for Prod
+
+```
+> npm run build:prod
 ```
 
 ### Docker
@@ -100,8 +112,6 @@ Push to repo
     - CI/CD?
 3. Documentation:
     - Site: README.md, home page, account page
-    - Swagger:
-        - https://blog.logrocket.com/documenting-express-js-api-swagger/
 
 PGAdmin Docker Container
 https://www.youtube.com/watch?v=RUeTKUf6JV0

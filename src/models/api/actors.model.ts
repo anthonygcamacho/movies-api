@@ -21,10 +21,14 @@ const getActorById = async (actorId: string): Promise<Actor> => {
     return await db.one(getActorByIdQuery)
 }
 
-const getActors = async (): Promise<Actor[] | void> => {
+const getActors = async (
+    offset: number | undefined,
+    limit: number | undefined
+): Promise<Actor[] | void> => {
     const getActorsQuery = new PS({
         name: "get-actors",
-        text: "SELECT * FROM actors",
+        text: "SELECT * FROM actors OFFSET $1 LIMIT $2",
+        values: [offset, limit || 1000],
     })
     return await db.many(getActorsQuery)
 }

@@ -18,8 +18,16 @@ const getDirectorById: RequestHandler = async (req, res): Promise<void> => {
 }
 
 const getDirectors: RequestHandler = async (req, res): Promise<void> => {
+    let offset: number | undefined
+    let limit: number | undefined
+    if (req.query?.offset) {
+        offset = Number(req.query.offset)
+    }
+    if (req.query?.limit) {
+        limit = Number(req.query.limit)
+    }
     try {
-        const results = await directorsModel.getDirectors()
+        const results = await directorsModel.getDirectors(offset, limit)
         res.status(200).json(results)
     } catch (err) {
         if (isErrorHandlingGeneral(err)) {

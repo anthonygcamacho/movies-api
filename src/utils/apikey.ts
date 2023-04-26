@@ -46,7 +46,6 @@ const validate: RequestHandler = async (req, res, next) => {
         })
     } else {
         const apiKey = req.query.api_key.toString()
-        console.log(typeof apiKey)
         let userFound = await userModel.findUserByApiKey(apiKey)
         if (userFound.length > 0) {
             next()

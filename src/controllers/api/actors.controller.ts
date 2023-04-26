@@ -6,8 +6,16 @@ import actorsModel from "../../models/api/actors.model"
 // -------------------------------------------------------------------------------
 
 const getActors: RequestHandler = async (req, res): Promise<void> => {
+    let offset: number | undefined
+    let limit: number | undefined
+    if (req.query?.offset) {
+        offset = Number(req.query.offset)
+    }
+    if (req.query?.limit) {
+        limit = Number(req.query.limit)
+    }
     try {
-        const results = await actorsModel.getActors()
+        const results = await actorsModel.getActors(offset, limit)
         res.status(200).json(results)
     } catch (err) {
         if (isErrorHandlingGeneral(err)) {

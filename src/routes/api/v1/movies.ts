@@ -12,6 +12,19 @@ const router = express.Router()
  *   get:
  *     tags:
  *     - Movies
+ *     parameters:
+ *       - in: query
+ *         name: offset
+ *         schema:
+ *           type: string
+ *         required: false
+ *         description: Offset for pagination
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: string
+ *         required: false
+ *         description: Limit number of results
  *     summary: Get movies
  *     responses:
  *       200:

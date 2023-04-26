@@ -19,7 +19,11 @@ const router = express.Router()
  *         content:
  *           application/json:
  *             schema:
- *               type: string
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   description: Will have a value of "UP" if everything is looking good.
  */
 router.get("/", healthCheckController)
 
