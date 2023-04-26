@@ -16,36 +16,14 @@ const router = express.Router()
  *     responses:
  *       200:
  *         description: A list of actors
- *         content:
+ *         contents:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       actor_id:
- *                         type: number
- *                         description: The actor ID
- *                         example: 1
- *                       first_name:
- *                         type: string
- *                         description: The actor's first name
- *                         example: Mel
- *                       last_name:
- *                         type: string
- *                         description: The actor's last name
- *                         example: Gibson
- *                       gender:
- *                         type: string
- *                         description: The actor's gender
- *                         example: M
- *                       date_of_birth:
- *                         type: string
- *                         description: Birth date
- *                         example: 1978-05-12T07:00:00.000Z
+ *               $ref: '#/components/schemas/Actor'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
  */
 router.get("/", actorsController.getActors)
 
@@ -55,41 +33,58 @@ router.get("/", actorsController.getActors)
  *   get:
  *     tags:
  *     - Actors
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Id of an actor
  *     summary: Get a single actor
  *     responses:
  *       200:
  *         description: A single actor
- *         content:
+ *         contents:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: object
- *                   properties:
- *                     actor_id:
- *                       type: number
- *                       description: The actor ID
- *                       example: 1
- *                     first_name:
- *                       type: string
- *                       description: The actors first name
- *                       example: Mel
- *                     last_name:
- *                       type: string
- *                       description: The actors last name
- *                       example: Gibson
- *                     gender:
- *                       type: string
- *                       description: The actors gender
- *                       example: M
- *                     date_of_birth:
- *                       type: string
- *                       description: Birth date
- *                       example: 1978-05-12T07:00:00.000Z
+ *               $ref: '#/components/schemas/Actor'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
+ *       404:
+ *         $ref: '#/components/responses/404'
  */
 router.get("/:actorId", actorsController.getActorById)
 
+/**
+ * @swagger
+ * '/api/v1/actors/{id}/movies':
+ *   get:
+ *     tags:
+ *     - Actors
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Id of an actor
+ *     summary: Get list of movies the actor starred in.
+ *     responses:
+ *       200:
+ *         description: A list movies the actor starred in.
+ *         contents:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Movie'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
+ *       404:
+ *         $ref: '#/components/responses/404'
+ */
 router.get("/:actorId/movies", moviesController.getMoviesByActorId)
 
 export default router

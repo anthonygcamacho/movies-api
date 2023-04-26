@@ -16,36 +16,14 @@ const router = express.Router()
  *     responses:
  *       200:
  *         description: A list of directors
- *         content:
+ *         contents:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       director_id:
- *                         type: number
- *                         description: The director ID
- *                         example: 1
- *                       first_name:
- *                         type: string
- *                         description: The director's first name
- *                         example: James
- *                       last_name:
- *                         type: string
- *                         description: The director's last name
- *                         example: Cameron
- *                       date_of_birth:
- *                         type: string
- *                         description: Birth date
- *                         example: 1978-05-12T07:00:00.000Z
- *                       nationality:
- *                         type: string
- *                         direction: Nationality
- *                         example: American
+ *               $ref: '#/components/schemas/Director'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
  */
 router.get("/", directorsController.getDirectors)
 
@@ -55,41 +33,58 @@ router.get("/", directorsController.getDirectors)
  *   get:
  *     tags:
  *     - Directors
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Id of a director
  *     summary: Get a single director
  *     responses:
  *       200:
  *         description: A single director
- *         content:
+ *         contents:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: object
- *                   properties:
- *                     director_id:
- *                       type: number
- *                       description: The director ID
- *                       example: 1
- *                     first_name:
- *                       type: string
- *                       description: The director's first name
- *                       example: James
- *                     last_name:
- *                       type: string
- *                       description: The director's last name
- *                       example: Cameron
- *                     date_of_birth:
- *                       type: string
- *                       description: Birth date
- *                       example: 1978-05-12T07:00:00.000Z
- *                     nationality:
- *                       type: string
- *                       direction: Nationality
- *                       example: American
+ *               $ref: '#/components/schemas/Director'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
+ *       404:
+ *         $ref: '#/components/responses/404'
  */
 router.get("/:directorId", directorsController.getDirectorById)
 
+/**
+ * @swagger
+ * '/api/v1/directors/{id}/movies':
+ *   get:
+ *     tags:
+ *     - Directors
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Id of a director
+ *     summary: Get list of movies by the director.
+ *     responses:
+ *       200:
+ *         description: A list movies by the director.
+ *         contents:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Director'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
+ *       404:
+ *         $ref: '#/components/responses/404'
+ */
 router.get("/:directorId/movies", moviesController.getMoviesByDirectorId)
 
 export default router

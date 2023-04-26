@@ -86,6 +86,10 @@ Push to repo
 
 [Createapp.dev - Webpack Boilerplate](https://www.youtube.com/watch?v=Ij8SJe_mwpU)
 
+[Swagger for an Express REST API - Document your API like a professional](https://www.youtube.com/watch?v=BOahFNoIrPk)
+
+[How to install and run pgAdmin 4 on a Docker container - (PostgreSQL Tutorial with Dave Page)](https://www.youtube.com/watch?v=RUeTKUf6JV0)
+
 ### Todos
 
 1. API:

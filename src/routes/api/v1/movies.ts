@@ -16,44 +16,14 @@ const router = express.Router()
  *     responses:
  *       200:
  *         description: A list of movies
- *         content:
+ *         contents:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       movie_id:
- *                         type: number
- *                         description: The movie ID
- *                         example: 1
- *                       movie_name:
- *                         type: string
- *                         description: The movie's first name
- *                         example: Mel
- *                       movie_length:
- *                         type: number
- *                         description: Length in minutes
- *                         example: M
- *                       movie_lang:
- *                         type: string
- *                         description: Language
- *                         example: Gibson
- *                       release_date:
- *                         type: string
- *                         description: Birth date
- *                         example: 1978-05-12T07:00:00.000Z *
- *                       age_certificate:
- *                         type: string
- *                         description: Age certificate
- *                         example: Mel
- *                       director_id:
- *                         type: number
- *                         description: The director ID
- *                         example: 1
+ *               $ref: '#/components/schemas/Movie'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
  */
 router.get("/", moviesController.getMovies)
 
@@ -63,51 +33,88 @@ router.get("/", moviesController.getMovies)
  *   get:
  *     tags:
  *     - Movies
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Id of a movie
  *     summary: Get a single movie
  *     responses:
  *       200:
  *         description: A single movie
- *         content:
+ *         contents:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: object
- *                   properties:
- *                     movie_id:
- *                       type: number
- *                       description: The movie ID
- *                       example: 1
- *                     movie_name:
- *                       type: string
- *                       description: The movie's first name
- *                       example: Mel
- *                     movie_length:
- *                       type: number
- *                       description: Length in minutes
- *                       example: M
- *                     movie_lang:
- *                       type: string
- *                       description: Language
- *                       example: Gibson
- *                     release_date:
- *                       type: string
- *                       description: Release date
- *                       example: 1978-05-12T07:00:00.000Z
- *                     age_certificate:
- *                       type: string
- *                       description: Age certificate
- *                       example: Mel
- *                     director_id:
- *                       type: number
- *                       description: The director ID
- *                       example: 1
+ *               $ref: '#/components/schemas/Movie'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
+ *       404:
+ *         $ref: '#/components/responses/404'
  */
 router.get("/:movieId", moviesController.getMovieById)
 
+/**
+ * @swagger
+ * '/api/v1/movies/{id}/actors':
+ *   get:
+ *     tags:
+ *     - Movies
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Id of a movie
+ *     summary: Get list of a movie's actors.
+ *     responses:
+ *       200:
+ *         description: A list of a movie's actors.
+ *         contents:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Movie'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
+ *       404:
+ *         $ref: '#/components/responses/404'
+ */
 router.get("/:movieId/actors", actorsController.getActorsByMovieId)
 
+/**
+ * @swagger
+ * '/api/v1/movies/{id}/revenue':
+ *   get:
+ *     tags:
+ *     - Movies
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Id of a movie
+ *     summary: Get a movie's revenue.
+ *     responses:
+ *       200:
+ *         description: A movie's revenue.
+ *         contents:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Movie'
+ *       400:
+ *         $ref: '#/components/responses/400'
+ *       401:
+ *         $ref: '#/components/responses/401'
+ *       404:
+ *         $ref: '#/components/responses/404'
+ */
 router.get("/:movieId/revenue", moviesController.getRevenueByMovieId)
 
 export default router
