@@ -24,6 +24,7 @@ export namespace Components {
         "resetPasswordPath": string;
     }
     interface AgcamachoApiKeyTable {
+        "apiDocsPath": string;
     }
 }
 declare global {
@@ -63,6 +64,7 @@ declare namespace LocalJSX {
         "resetPasswordPath": string;
     }
     interface AgcamachoApiKeyTable {
+        "apiDocsPath"?: string;
     }
     interface IntrinsicElements {
         "agcamacho-allinone-auth-v1": AgcamachoAllinoneAuthV1;

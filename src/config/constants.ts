@@ -9,6 +9,7 @@ const constants = {
         env === "production"
             ? "https://project-sandbox-10e45.web.app"
             : "http://localhost:5000",
+    API_DOCS_PATH: "/api/v1/docs",
     LOGIN_PATH: "login",
     LOGIN_REDIRECT_PATH: "account",
     CREATE_USER_PATH: "users/create",

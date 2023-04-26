@@ -1,4 +1,4 @@
-import { Component, State, h } from "@stencil/core";
+import { Component, State, Prop, h } from "@stencil/core";
 import axios from "axios";
 
 @Component({
@@ -14,6 +14,7 @@ export class ApiKeyTable {
   @State() tableRowId = 1;
   @State() generateBtnDisabled = false;
   @State() apiKeyShow: false;
+  @Prop() apiDocsPath: string;
 
   // After initial load processes
   connectedCallback() {
@@ -250,6 +251,13 @@ export class ApiKeyTable {
               <span>Generate API Key</span>
             )}
           </button>
+          <a
+            class="api-key-table__toolbar__api-docs-path"
+            href={this.apiDocsPath}
+            target="_blank"
+          >
+            API Docs
+          </a>
         </div>
         <table class="api-key-table__table-wrapper">
           <thead class="api-key-table__header">

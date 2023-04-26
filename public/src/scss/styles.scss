@@ -402,10 +402,20 @@ $tablewidth: 1100px;
         text-align: left;
         &__generate {
             width: 180px;
+            margin-right: 40px;
             padding: 5px 0;
             font-size: 1em;
             font-weight: 600;
             cursor: pointer;
+        }
+        &__api-docs-path {
+            @include form-nav-links;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-transform: uppercase;
+            &:hover {
+                @include form-nav-links-hover;
+            }
         }
     }
     &__table-wrapper {
