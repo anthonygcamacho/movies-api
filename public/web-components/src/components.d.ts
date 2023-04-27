@@ -12,15 +12,18 @@ export namespace Components {
         "createUserPath": string;
         "createUserRedirectPath": string;
         "formDescriptionCreateAccount": string;
+        "formDescriptionCreateNewPassword": string;
         "formDescriptionLogIn": string;
         "formDescriptionResetPassword": string;
         "formHeaderDescriptionIsSet": boolean;
         "formHeaderIsSet": boolean;
         "formTitleCreateAccount": string;
+        "formTitleCreateNewPassword": string;
         "formTitleLogIn": string;
         "formTitleResetPassword": string;
         "loginPath": string;
         "loginRedirectPath": string;
+        "newFormType"?: string | null;
         "resetPasswordPath": string;
     }
     interface AgcamachoApiKeyTable {
@@ -52,15 +55,18 @@ declare namespace LocalJSX {
         "createUserPath": string;
         "createUserRedirectPath": string;
         "formDescriptionCreateAccount"?: string;
+        "formDescriptionCreateNewPassword"?: string;
         "formDescriptionLogIn"?: string;
         "formDescriptionResetPassword"?: string;
         "formHeaderDescriptionIsSet"?: boolean;
         "formHeaderIsSet"?: boolean;
         "formTitleCreateAccount"?: string;
+        "formTitleCreateNewPassword"?: string;
         "formTitleLogIn"?: string;
         "formTitleResetPassword"?: string;
         "loginPath": string;
         "loginRedirectPath": string;
+        "newFormType"?: string | null;
         "resetPasswordPath": string;
     }
     interface AgcamachoApiKeyTable {

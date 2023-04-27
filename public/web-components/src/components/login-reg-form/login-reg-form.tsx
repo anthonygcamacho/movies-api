@@ -11,7 +11,9 @@ enum DEFAULTS {
   FORM_TITLE_CREATE_ACCOUNT = "Create Account",
   FORM_DESCRIPTION_CREATE_ACCOUNT = "Create account to generate you own API Keys.",
   FORM_TITLE_RESET_PASSWORD = "Reset Password",
-  FORM_DESCRIPTION_RESET_PASSWORD = "Reset password to log in.",
+  FORM_DESCRIPTION_RESET_PASSWORD = "Receive an email confirmation to reset you password.",
+  FORM_TITLE_CREATE_NEW_PASSWORD = "Create New Password",
+  FORM_DESCRIPTION_CREATE_NEW_PASSWORD = "Create you new password.",
   EMAIL_INVALID_MESSAGE = "Enter a valid email address.",
   PASSWORD_INVALID_MESSAGE = "Password must be between 8 - 16 characters. No spaces.",
   CONFIRM_PASSWORD_INVALID_MESSAGE = "Confirmation password must match password.",
@@ -39,6 +41,7 @@ export class LoginRegForm {
   @State() formType = DEFAULTS.FORM_TYPE as string;
   @State() formTitile = DEFAULTS.FORM_TITLE_LOG_IN as string;
   @State() formDescription = DEFAULTS.FORM_DESCRIPTION_LOG_IN as string;
+  @State() emailDisplay = true;
   @State() password1Display = true;
   @State() password2Display = false;
   @State() resetPasswordDisplay = true;
@@ -58,6 +61,7 @@ export class LoginRegForm {
   @State() isPassword2ValidMsg: string;
 
   // API url and paths
+  @Prop() newFormType?: string | null;
   @Prop() apiUrl!: string;
   @Prop() loginPath!: string;
   @Prop() loginRedirectPath!: string;
@@ -78,6 +82,10 @@ export class LoginRegForm {
   @Prop() formTitleResetPassword = DEFAULTS.FORM_TITLE_RESET_PASSWORD as string;
   @Prop() formDescriptionResetPassword =
     DEFAULTS.FORM_DESCRIPTION_RESET_PASSWORD as string;
+  @Prop() formTitleCreateNewPassword =
+    DEFAULTS.FORM_TITLE_CREATE_NEW_PASSWORD as string;
+  @Prop() formDescriptionCreateNewPassword =
+    DEFAULTS.FORM_DESCRIPTION_CREATE_NEW_PASSWORD as string;
 
   // After initial load processes
   connectedCallback() {
@@ -99,6 +107,12 @@ export class LoginRegForm {
     // Set initial log in title and description values
     this.formTitile = this.formTitleLogIn;
     this.formDescription = this.formDescriptionLogIn;
+
+    // Create new password form
+    if (this.newFormType) {
+      this.formType = this.newFormType;
+      this.formTypeSwitch(this.newFormType);
+    }
   }
 
   // Field resets
@@ -112,12 +126,8 @@ export class LoginRegForm {
     this.generalMessageToggle = false;
   }
 
-  // Todo: add type for create new password
-  // Form type toggle
-  onToggleFormType = (e: Event, type: string) => {
-    e.preventDefault();
-    this.formType = type;
-    this.resetFields();
+  formTypeSwitch(type: string) {
+    console.log(type);
     switch (type) {
       case "login":
         this.formTitile = this.formTitleLogIn;
@@ -129,16 +139,6 @@ export class LoginRegForm {
         this.createAccountDisplay = true;
         this.submitBtn = "Log in";
         break;
-      case "resetpassword":
-        this.formTitile = this.formTitleResetPassword;
-        this.formDescription = this.formDescriptionResetPassword;
-        this.password1Display = false;
-        this.password2Display = false;
-        this.resetPasswordDisplay = false;
-        this.logInDisplay = true;
-        this.createAccountDisplay = true;
-        this.submitBtn = "Reset";
-        break;
       case "createaccount":
         this.formTitile = this.formTitleCreateAccount;
         this.formDescription = this.formDescriptionCreateAccount;
@@ -149,6 +149,27 @@ export class LoginRegForm {
         this.createAccountDisplay = false;
         this.submitBtn = "Create";
         break;
+      case "resetpassword":
+        this.formTitile = this.formTitleResetPassword;
+        this.formDescription = this.formDescriptionResetPassword;
+        this.password1Display = false;
+        this.password2Display = false;
+        this.resetPasswordDisplay = false;
+        this.logInDisplay = true;
+        this.createAccountDisplay = true;
+        this.submitBtn = "Reset";
+        break;
+      case "createnewpassword":
+        this.formTitile = this.formTitleCreateNewPassword;
+        this.formDescription = this.formDescriptionCreateNewPassword;
+        this.emailDisplay = false;
+        this.password1Display = true;
+        this.password2Display = true;
+        this.resetPasswordDisplay = false;
+        this.logInDisplay = false;
+        this.createAccountDisplay = false;
+        this.submitBtn = "Submit";
+        break;
       default:
         this.password1Display = true;
         this.password2Display = false;
@@ -158,9 +179,18 @@ export class LoginRegForm {
         this.submitBtn = "Log in";
         break;
     }
+  }
+
+  // Todo: add type for create new password
+  // Form type toggle
+  onToggleFormType = (e: Event, type: string) => {
+    e.preventDefault();
+    this.formType = type;
+    this.resetFields();
+    this.formTypeSwitch(type);
   };
 
-  setLocalStorate(key, value) {
+  setLocalStorage(key, value) {
     console.log(key);
     console.log(value);
     window.localStorage.setItem(key, value);
@@ -189,7 +219,7 @@ export class LoginRegForm {
             password: this.password1,
           })
           .then((res) => {
-            this.setLocalStorate("token", res.data.token);
+            this.setLocalStorage("token", res.data.token);
           })
           .then(() => {
             window.location.href = "/account";
@@ -215,7 +245,7 @@ export class LoginRegForm {
             password: this.password1,
           })
           .then((res) => {
-            this.setLocalStorate("token", res.data.token);
+            this.setLocalStorage("token", res.data.token);
           })
           .then(() => {
             window.location.href = "/account";
@@ -327,26 +357,31 @@ export class LoginRegForm {
           onSubmit={this.onSubmitForm.bind(this)}
           novalidate
         >
-          <div class="login-reg-form__form__input-wrapper">
-            <input
-              class={"login-reg-form__form__input input " + this.isEmailValid}
-              type="email"
-              id="email"
-              placeholder="Email"
-              value={this.email}
-              onInput={(e: Event) => this.onEmailInput(e)}
-            />
-            <div class="login-reg-form__form__input-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            {this.isEmailValid != "" ? (
-              <div class="login-reg-form__form__validation-msg">
-                {DEFAULTS.EMAIL_INVALID_MESSAGE}
+          {this.emailDisplay ? (
+            <div class="login-reg-form__form__input-wrapper">
+              <input
+                class={"login-reg-form__form__input input " + this.isEmailValid}
+                type="email"
+                id="email"
+                placeholder="Email"
+                value={this.email}
+                onInput={(e: Event) => this.onEmailInput(e)}
+              />
+              <div class="login-reg-form__form__input-icon">
+                <i class="fa-solid fa-envelope"></i>
               </div>
-            ) : (
-              ""
-            )}
-          </div>
+              {this.isEmailValid != "" ? (
+                <div class="login-reg-form__form__validation-msg">
+                  {DEFAULTS.EMAIL_INVALID_MESSAGE}
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+          ) : (
+            ""
+          )}
+
           {/* Password 1 */}
           {this.password1Display ? (
             <div class="login-reg-form__form__input-wrapper">

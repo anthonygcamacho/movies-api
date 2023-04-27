@@ -17,9 +17,12 @@ const {
 export const homeController: RequestHandler = (req, res): void => {
     // res.set("Cache-Control", "public, max-age=300, s-maxage=600")
 
+    console.log(req.query)
+
     res.render("home", {
         page: "home",
         isAuthenticated: req.isAuthenticated(),
+        newFormType: req.query.formtype || null,
         ENV,
         API_URL,
         LOGIN_PATH,
