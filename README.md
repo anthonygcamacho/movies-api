@@ -100,3 +100,19 @@ Goto AWS Console for ECR and follow instructions for building and deployment.
     - CI/CD?
 3. Documentation:
     - Site: README.md, home page, account page
+
+## Roles
+
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html
+
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html
+
+IAM -> roles -> ecsTaskExecutionRole
+
+AmazonS3ReadOnlyAccess
+
+##
+
+Serverless framework
+
+api gateway - api keys https://www.youtube.com/watch?v=j_Gz-ACum80
