@@ -89,30 +89,3 @@ Goto AWS Console for ECR and follow instructions for building and deployment.
 [Swagger for an Express REST API - Document your API like a professional](https://www.youtube.com/watch?v=BOahFNoIrPk)
 
 [How to install and run pgAdmin 4 on a Docker container - (PostgreSQL Tutorial with Dave Page)](https://www.youtube.com/watch?v=RUeTKUf6JV0)
-
-### Todos
-
-1. API:
-    - login form
-        - reset password
-2. AWS:
-    - reset password
-    - CI/CD?
-3. Documentation:
-    - Site: README.md, home page, account page
-
-## Roles
-
-https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html
-
-https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html
-
-IAM -> roles -> ecsTaskExecutionRole
-
-AmazonS3ReadOnlyAccess
-
-##
-
-Serverless framework
-
-api gateway - api keys https://www.youtube.com/watch?v=j_Gz-ACum80
