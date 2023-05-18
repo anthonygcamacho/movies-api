@@ -81,11 +81,3 @@ Goto AWS Console for ECR and follow instructions for building and deployment.
 [Modeled database using Oracle SQL Developer Data Modeler](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/#:~:text=Oracle%20SQL%20Developer%20Data%20Modeler%20is%20a%20free%20graphical%20tool,dimensional%2C%20and%20data%20type%20models.)
 
 ![Movies REST API - Databasee](https://github.com/anthonygcamacho/movies-api/blob/master/data-model.png?raw=true)
-
-## Resources
-
-[Createapp.dev - Webpack Boilerplate](https://www.youtube.com/watch?v=Ij8SJe_mwpU)
-
-[Swagger for an Express REST API - Document your API like a professional](https://www.youtube.com/watch?v=BOahFNoIrPk)
-
-[How to install and run pgAdmin 4 on a Docker container - (PostgreSQL Tutorial with Dave Page)](https://www.youtube.com/watch?v=RUeTKUf6JV0)
