@@ -6,19 +6,23 @@ Thank you for checking out what I can do with NodeJS / Express. This is just an 
 
 ### In this application you will find these features:
 
-| Feature       | Description                                  |
-| :------------ | :------------------------------------------- |
-| Express       | Site and API Routing                         |
-| Auth          | Passport-Local and Passport-JWT              |
-| AWS RDS       | AWS Relational Database Service (Postgres)   |
-| Swagger       | OpenAPI 3.0 Standard API Route Documentation |
-| TypeScript    | Coded in TypeScript                          |
-| PG-Promise    | PostgreSQL Interface for NodeJS              |
-| Morgan        | Logging                                      |
-| Helmet / Cors | Security                                     |
-| Jest Testing  | Integration and Unit Tests                   |
+| Feature         | Description                                  |
+| :-------------- | :------------------------------------------- |
+| Express         | Site and API Routing                         |
+| TypeScript      | Coded in TypeScript                          |
+| SwaggerDocs     | OpenAPI 3.0 Standard API Route Documentation |
+| PG-Promise      | PostgreSQL Interface for NodeJS              |
+| Passport Auth   | Passport-Local and Passport-JWT              |
+| Morgan          | Logging                                      |
+| Helmet / Cors   | Security                                     |
+| Jest Testing    | Integration and Unit Tests                   |
+| KNEX Migrations | Migrations for database management           |
+| AWS RDS         | AWS Relational Database Service (Postgres)   |
+| AWS ECS Fargate | Load Balancing with ECS Docker               |
 
 ## Development
+
+Try the Movies API app: [https://moviesapi.net](https://moviesapi.net)
 
 ### Back-end
 
