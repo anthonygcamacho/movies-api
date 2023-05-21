@@ -1,6 +1,6 @@
-# Movie Rest API Demo - Express Site / API on Firebase Hosting
+# Movie Rest API Demo
 
-Thank you for checking out what I can do with NodeJS / Express. This is just an demo application.
+Try the Movies API app: [https://moviesapi.net](https://moviesapi.net)
 
 ## Special Features
 
@@ -21,8 +21,6 @@ Thank you for checking out what I can do with NodeJS / Express. This is just an 
 | AWS ECS Fargate | Load Balancing with ECS Docker               |
 
 ## Development
-
-Try the Movies API app: [https://moviesapi.net](https://moviesapi.net)
 
 ### Back-end
 
