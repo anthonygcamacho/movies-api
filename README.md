@@ -16,6 +16,8 @@ Try the Movies API app: [https://moviesapi.net](https://moviesapi.net)
 | Morgan          | Logging                                      |
 | Helmet / Cors   | Security                                     |
 | Jest Testing    | Integration and Unit Tests                   |
+| EJS Templates   | HTML templates using EJS                     |
+| StencilJS       | Forms and API table is built using StencilJS |
 | KNEX Migrations | Migrations for database management           |
 | AWS RDS         | AWS Relational Database Service (Postgres)   |
 | AWS ECS Fargate | Load Balancing with ECS Docker               |
